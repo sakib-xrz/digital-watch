@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 50px;
+    background-color: #222531;
+    color: #fff;
+    min-width: 320px;
+}
+.myWatch{
+    text-align: center;
+}
+.myWatch .time{
+    background-color: #FF7355;
+    padding: 10px;
+    border-radius: 10px;
+}
+.myWatch .AMorPM{
+    background-color: #FFBB4F;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.myWatch .date{
+    background-color: #353B4A;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}

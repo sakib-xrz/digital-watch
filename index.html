@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Watch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="myWatch">
+        <span class="time">
+        </span>
+        <span class="AMorPM">
+        </span> <br>
+        <span class="date">
+        </span>
+    </div>
+
+    <script>
+        function timeAndDate() {
+            let myDate = new Date();
+            let hr,min = (myDate.getMinutes() < 10) ? "0" + myDate.getMinutes() :  myDate.getMinutes(),
+                sec = (myDate.getSeconds() < 10) ? "0" + myDate.getSeconds() :  myDate.getSeconds(),
+                AmPm = (myDate.getHours() >= 10) ? "PM" : "AM";
+
+            if (myDate.getHours() == 0) {
+                hr = 12;
+            }if (myDate.getHours() > 12) {
+                hr = myDate.getHours() - 12;
+            } else {
+                hr = myDate.getHours();
+            }
+
+            let currentTime = hr + ":" + min + ":" + sec;
+
+            document.getElementsByClassName("time")[0].innerHTML = currentTime;
+            document.getElementsByClassName("AMorPM")[0].innerHTML = AmPm; 
+
+            let myDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            myMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            day = myDate.getDate(),
+            year = myDate.getFullYear();
+
+            let currentDate = myDay[myDate.getDay()] + ", " + day + " " + myMonth[myDate.getMonth()] + " " + year;
+            document.getElementsByClassName("date")[0].innerHTML = currentDate;
+        }
+
+        timeAndDate();
+
+        setInterval(
+            function () {
+                timeAndDate();
+            }, 1000
+        );
+
+    </script>
+</body>
+</html>
