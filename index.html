@@ -22,7 +22,7 @@
             let myDate = new Date();
             let hr,min = (myDate.getMinutes() < 10) ? "0" + myDate.getMinutes() :  myDate.getMinutes(),
                 sec = (myDate.getSeconds() < 10) ? "0" + myDate.getSeconds() :  myDate.getSeconds(),
-                AmPm = (myDate.getHours() >= 10) ? "PM" : "AM";
+                AmPm = (myDate.getHours() >= 12) ? "PM" : "AM";
 
             if (myDate.getHours() == 0) {
                 hr = 12;
